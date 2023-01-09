@@ -6,7 +6,9 @@ import { ActiveUserContext } from "../provider/activeUserProvider";
 import { UsersContext } from "../provider/usersProvider";
 
 const Logout = () => {
+  //users data from context
   const [users, setUsers] = useContext(UsersContext);
+  //selected user details
   const [user, setUser] = useContext(ActiveUserContext);
   return (
     <div>
@@ -27,6 +29,7 @@ const Logout = () => {
               {user.email}
             </div>
           </div>
+          {/* //other active users list */}
           {users.slice(0, 2).map((user, i) => (
             <div
               key={i}
@@ -56,7 +59,9 @@ const Logout = () => {
 };
 
 const Header = ({ type }) => {
+  //more info model toggle
   const [open, setOpen] = useState(false);
+  //all users data from context
   const [user, setUser] = useContext(ActiveUserContext);
 
   return (

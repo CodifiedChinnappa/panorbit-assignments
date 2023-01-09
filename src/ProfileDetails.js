@@ -5,6 +5,7 @@ import GoogleMapReact from "google-map-react";
 import { ActiveUserContext } from "./provider/activeUserProvider";
 
 const ProfileDetails = () => {
+  //selected user details
   const [user, setUser] = useContext(ActiveUserContext);
   const location = {
     lat: 10.99835602,
@@ -28,6 +29,7 @@ const ProfileDetails = () => {
             {user?.name}
           </div>
         </div>
+        {/* //user info */}
         <div className="space-y-2 pb-3">
           <div className="flex space-x-3 -ml-4">
             <div className="box capitalize font-normal text-neutral-400 text-lg ">
@@ -79,7 +81,7 @@ const ProfileDetails = () => {
         </div>
 
         <hr class="h-0.5 bg-stone-300" />
-
+        {/* //user company details */}
         <div>
           <div className="capitalize font-medium text-neutral-400 text-center text-lg py-2 -ml-[3rem]">
             Company
@@ -121,6 +123,8 @@ const ProfileDetails = () => {
           </div>
         </div>
       </div>
+
+      {/* //user address */}
       <div className="flex flex-col   pl-[3rem] space-y-2">
         <div className="capitalize font-normal text-neutral-400 text-left text-xl py-2">
           Address:
@@ -169,7 +173,7 @@ const ProfileDetails = () => {
             <span>{user?.address.zipcode}</span>
           </div>
         </div>
-
+        {/* //maps widget */}
         <div className=" w-[33vw] h-[48vh] pt-2  ml-5">
           <GoogleMapReact
             bootstrapURLKeys={{ key: "" }}

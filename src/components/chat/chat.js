@@ -11,13 +11,18 @@ import { UsersContext } from "../../provider/usersProvider";
 import ChattingWidget from "./ChattingWidget";
 
 const Chat = () => {
+  //selected user data
   const [users, setusers] = useContext(UsersContext);
+  //toggle chat windows
   const [open, setOpen] = useState(false);
   const [openChat, setOpenChat] = useState(false);
+
+  //selected user chat conversation data
   const [chatUser, setChatUser] = useState([]);
 
   return (
     <div className="z-40">
+      {/* //toggle chat window */}
       <div className="max-fit-w min-w-[12rem]  bg-blue-600 px-3 py-2 rounded-t-lg text-white">
         <div
           onClick={() => setOpen(!open)}
@@ -30,6 +35,7 @@ const Chat = () => {
           <div>{open ? <BsChevronDown /> : <BsChevronUp />}</div>
         </div>
       </div>
+      {/* // list active users */}
       <div
         className={`${
           open ? "block" : "hidden"
@@ -61,6 +67,7 @@ const Chat = () => {
           </div>
         ))}
       </div>
+      {/* //ChattingWidget */}
       {openChat ? (
         <div className="fixed bottom-0 right-64  ">
           <ChattingWidget

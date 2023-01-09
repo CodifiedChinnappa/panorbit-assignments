@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+//import context provider
 import { ActiveUserContext } from "../provider/activeUserProvider";
 
 const Sidebar = ({ type }) => {
@@ -9,7 +11,7 @@ const Sidebar = ({ type }) => {
 
   const navigate = useNavigate();
 
-  //function to invoice type
+  //function to change type
   const changeInvoiceType = (option) => {
     if (option === "profile") {
       setOption("profile");
@@ -22,6 +24,7 @@ const Sidebar = ({ type }) => {
     }
   };
 
+  //toggle to different page on type selection
   useEffect(() => {
     if (option === "profile") {
       navigate(`/profile-details/${user.name.replace(/\s/g, "-")}`);

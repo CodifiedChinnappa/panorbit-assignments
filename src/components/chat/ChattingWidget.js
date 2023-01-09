@@ -1,4 +1,6 @@
 import React from "react";
+
+//import icons
 import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { GoChevronRight } from "react-icons/go";
@@ -6,6 +8,7 @@ import { GoChevronRight } from "react-icons/go";
 const ChattingWidget = ({ chatUser, openChat, open, setOpen, setOpenChat }) => {
   return (
     <div>
+      {/* //toggle selected user chat window */}
       <div className=" w-52  bg-blue-600 px-3 py-2 rounded-t-lg text-white">
         <div
           onClick={() => {

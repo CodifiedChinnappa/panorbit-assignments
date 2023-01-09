@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+
+//import context providers
 import { UsersContext } from "./provider/usersProvider";
 import { ActiveUserContext } from "./provider/activeUserProvider";
 
 const LandingPage = () => {
+  //users data from context
   const [users, setUsers] = useContext(UsersContext);
+  //selected user details
   const [user, setUser] = useContext(ActiveUserContext);
   return (
     <div className="landing-page  flex items-center justify-center h-[45rem] relative">
@@ -14,6 +18,7 @@ const LandingPage = () => {
             Select an account
           </h1>
         </div>
+        {/* //available users list */}
         <div className=" bg-white h-[22rem] overflow-y-scroll rounded-b-[20px] px-8 pt-1">
           {users.map((user, i) => (
             <Link
